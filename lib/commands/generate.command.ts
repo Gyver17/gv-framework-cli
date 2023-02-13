@@ -6,10 +6,13 @@ import inquirer from 'inquirer';
 import { AbstractCommand } from './abstract';
 
 // @Utils
-import { generateQuestion } from '../utils/question-collection';
+import { generateQuestion } from '../question';
 
 // @Interfaces
 import { GenerateAnswers, GenerateInput } from '../interfaces';
+
+// @Collections
+import { Collection } from '../schematics/collections';
 
 export class GenerateCommand extends AbstractCommand {
 	public async load(program: Command): Promise<void> {
@@ -39,6 +42,8 @@ export class GenerateCommand extends AbstractCommand {
 						};
 					}
 					if (!input) throw new Error();
+
+					Collection.validate(input.schematic);
 
 					console.log(input);
 				},
