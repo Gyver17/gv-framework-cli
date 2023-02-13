@@ -2,21 +2,22 @@ import { Answers, QuestionCollection } from 'inquirer';
 import { GenerateAnswers } from '../interfaces';
 import { ImplementQuestion } from './implement';
 import { Collection } from '../schematics/collections/index';
+import {QUESTIONS} from '../ui'
 
 export const generateQuestion: QuestionCollection<GenerateAnswers> = [
 	{
 		type: 'list',
 		name: 'schematic',
-		message: 'enter a schematic',
+		message: QUESTIONS.SCHEMATIC,
 		choices: Collection.getSchematics(),
 	},
 	{
 		type: 'input',
 		name: 'name',
-		message: 'enter a name',
+		message: QUESTIONS.NAME,
 		validate(input: string) {
 			if (input === '') {
-				return 'Name is required';
+				return QUESTIONS.NAME_REQUIRED;
 			}
 
 			return true;
@@ -25,7 +26,8 @@ export const generateQuestion: QuestionCollection<GenerateAnswers> = [
 	{
 		type: 'input',
 		name: 'path',
-		message: 'enter a path',
+		message: QUESTIONS.PATH,
+		suffix: ' (/)'
 	},
 ];
 
