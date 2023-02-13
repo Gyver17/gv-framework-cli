@@ -6,7 +6,7 @@ import { SchematicOption } from './schematic.option'; */
 import { Schematic } from '../../interfaces';
 
 export class Collection {
-	private static schematics: Schematic[] = [
+	public static schematics: Schematic[] = [
 		{
 			name: 'resource',
 			alias: 'res',
