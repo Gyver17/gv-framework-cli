@@ -8,6 +8,9 @@ import Table from 'cli-table3';
 import { AbstractCommand } from './abstract';
 
 // @Utils
+import { normalizeToKebabCase } from '../utils';
+
+// @Questions
 import { generateQuestion } from '../question';
 
 // @Interfaces
@@ -46,8 +49,9 @@ export class GenerateCommand extends AbstractCommand {
 					if (!input) throw new Error();
 
 					Collection.validate(input.schematic);
+					input.name = normalizeToKebabCase(input.name);
 
-					await this.action.handle(input)
+					await this.action.handle(input);
 				},
 			);
 	}
@@ -68,9 +72,7 @@ export class GenerateCommand extends AbstractCommand {
 		);
 	}
 
-	private buildSchematicsListAsTable(
-		schematics: Schematic[],
-	): string {
+	private buildSchematicsListAsTable(schematics: Schematic[]): string {
 		const leftMargin = '    ';
 		const tableConfig = {
 			head: ['name', 'alias', 'description'],
