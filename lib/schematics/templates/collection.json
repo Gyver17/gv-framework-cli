@@ -2,27 +2,27 @@
 	"$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
 	"schematics": {
 		"controller": {
-			"factory": "./lib/controller/controller.factory#main",
+			"factory": "./controller/controller.factory#main",
 			"description": "Create a Gv controller.",
-			"schema": "./lib/controller/schema.json",
+			"schema": "./controller/schema.json",
 			"aliases": ["co"]
 		},
 		"middleware": {
-			"factory": "./lib/middleware/middleware.factory#main",
+			"factory": "./middleware/middleware.factory#main",
 			"description": "Create a Gv middleware.",
-			"schema": "./lib/middleware/schema.json",
+			"schema": "./middleware/schema.json",
 			"aliases": ["mi"]
 		},
 		"service": {
-			"factory": "./lib/service/service.factory#main",
+			"factory": "./service/service.factory#main",
 			"description": "Create a Gv service.",
-			"schema": "./lib/service/schema.json",
+			"schema": "./service/schema.json",
 			"aliases": ["s"]
 		},
 		"resource": {
-			"factory": "./lib/resource/resource.factory#main",
+			"factory": "./resource/resource.factory#main",
 			"description": "Create a Gv resource.",
-			"schema": "./lib/resource/schema.json",
+			"schema": "./resource/schema.json",
 			"aliases": ["res"]
 		}
 	}

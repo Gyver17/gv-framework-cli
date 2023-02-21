@@ -1,4 +1,14 @@
-import { Controller } from '@nestjs/common';
+import { ControllerParams } from 'gv-framework';
 
-@Controller('<%= dasherize(name) %>')
-export class <%= classify(name) %>Controller {}
+
+export class <%= classify(name) %>Controller {
+    findAll(params: ControllerParams) {}
+
+    findOne(params: ControllerParams) {}
+
+    create(params: ControllerParams) {}
+
+    update(params: ControllerParams) {}
+    
+    remove(params: ControllerParams) {}
+}

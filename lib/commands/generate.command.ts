@@ -51,6 +51,10 @@ export class GenerateCommand extends AbstractCommand {
 					Collection.validate(input.schematic);
 					input.name = normalizeToKebabCase(input.name);
 
+					input.options = {
+						spec: true
+					}
+
 					await this.action.handle(input);
 				},
 			);
